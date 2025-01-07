@@ -1,8 +1,8 @@
 insert into users(username, password)
-values ('alex', ''), -- TODO: password
-       ('mihai', ''),
-       ('maria', ''),
-       ('ioana','');
+values ('alex', '$2a$10$mn4uqw941tuQls3upBNH8ejtIWJipcdOAErOCNPjtvnDyWYJL8Jku'), -- password: alex
+       ('mihai', '$2a$10$ALo2CNYA/KVv/0Sy3ig2xOahW/S7/r2SXlsAO1sfwZW1oNj1EQFlu'), -- password: mihai
+       ('maria', '$2a$10$NiBd0CHMDpvxbPfZmZ7EBOl7qod1nR/fWUKABAQLr8FDmt44nBJ1O'), -- password: maria
+       ('ioana', '$2a$10$jzZwR2GZZnmUP2HZoSZ1e.d2XE1koUcijYK8YSHEu.0ob3/fTqKWy'); -- password: ioana
 
 insert into projects(name, description, id_lead)
 values ('Project 1', 'Description of Project 1', 1),

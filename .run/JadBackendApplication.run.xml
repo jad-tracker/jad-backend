@@ -2,6 +2,12 @@
   <configuration default="false" name="JadBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
     <module name="jad-backend" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="ro.ubbcluj.tpjad.jadbackend.JadBackendApplication" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="ro.ubbcluj.tpjad.jadbackend.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
