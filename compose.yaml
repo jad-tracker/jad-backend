@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: jadtracker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "7071:5432"
+
+volumes:
+  postgres_data:
