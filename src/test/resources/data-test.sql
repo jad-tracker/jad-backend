@@ -6,7 +6,8 @@ values ('alex', '$2a$10$mn4uqw941tuQls3upBNH8ejtIWJipcdOAErOCNPjtvnDyWYJL8Jku'),
 
 insert into projects(name, description, id_lead)
 values ('Project 1', 'Description of Project 1', 1),
-       ('Project 2', 'Description of Project 2', 3);
+       ('Project 2', 'Description of Project 2', 3),
+       ('Project 3', 'Description of Project 3', 1);
 
 insert into project_members(id_user, id_project, role)
 values (2, 1, 'Dev'),
