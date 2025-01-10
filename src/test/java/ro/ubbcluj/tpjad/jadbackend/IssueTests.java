@@ -1,6 +1,5 @@
 package ro.ubbcluj.tpjad.jadbackend;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ public class IssueTests {
     private WebTestClient webTestClient;
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void getAllIssues_success() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -42,7 +40,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void getAllIssues_success_emptyList() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
@@ -62,7 +59,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void createIssue_success() {
@@ -85,7 +81,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void createIssue_failed_invalidType() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -107,7 +102,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void createIssue_failed_invalidDate() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -129,7 +123,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void updateIssue_success() {
@@ -152,7 +145,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void updateIssue_failed_invalidAssignee() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
@@ -174,7 +166,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void updateIssue_failed_invalidStatus() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
@@ -196,7 +187,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void updateIssue_failed_issueNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
@@ -218,7 +208,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void deleteIssue_success() {
@@ -234,7 +223,6 @@ public class IssueTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-5")
     void deleteIssue_failed_issueNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
