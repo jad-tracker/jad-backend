@@ -1,6 +1,5 @@
 package ro.ubbcluj.tpjad.jadbackend;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ public class CommentTests {
     private WebTestClient webTestClient;
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void getAllComments_success() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -41,7 +39,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void getAllComments_success_emptyList() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -61,7 +58,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void createComment_success() {
@@ -84,7 +80,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void createComment_failed_invalidDate() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -106,7 +101,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void updateComment_success() {
@@ -129,7 +123,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void updateComment_failed_invalidDate() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The author of the comment we modify
@@ -151,7 +144,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void updateComment_failed_commentNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The author of the comment we modify
@@ -173,7 +165,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void deleteComment_success() {
@@ -189,7 +180,6 @@ public class CommentTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-7")
     void deleteComment_failed_commentNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The author of the comment we delete
