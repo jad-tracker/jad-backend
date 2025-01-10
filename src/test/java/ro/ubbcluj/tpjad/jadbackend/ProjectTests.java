@@ -1,6 +1,5 @@
 package ro.ubbcluj.tpjad.jadbackend;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ public class ProjectTests {
     private WebTestClient webTestClient;
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void getAllProjects_success_memberAndLeader() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex");
@@ -43,7 +41,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void getAllProjects_success_memberOnly() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai");
@@ -66,7 +63,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void getAllProjects_success_emptyList() {
@@ -87,7 +83,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void createProject_success() {
@@ -110,7 +105,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void updateProjectName_success() {
@@ -127,13 +121,12 @@ public class ProjectTests {
             .expectHeader().contentType(MediaType.APPLICATION_JSON)
             .expectBody()
             .json(
-                "{\"id\": 1, \"name\": \"Project 1 updated\", \"description\": \"Description of Project 1\" \"lead\": \"alex\"}",
+                "{\"id\": 1, \"name\": \"Project 1 updated\", \"description\": \"Description of Project 1\", \"lead\": \"alex\"}",
                 JsonCompareMode.LENIENT
             );
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void updateProjectName_failed_projectNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project we modify
@@ -155,7 +148,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void deleteProject_success() {
@@ -171,7 +163,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void deleteProject_failed_projectNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project we delete
@@ -191,7 +182,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void getAllProjectMembers_success() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "mihai", "mihai"); // Member or lead of the project
@@ -214,7 +204,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void getAllProjectMembers_success_emptyList() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // Member or lead of the project
@@ -234,7 +223,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void addProjectMember_success() {
@@ -257,7 +245,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void addProjectMember_failed_userNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project
@@ -279,7 +266,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void addProjectMember_failed_projectNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project
@@ -301,7 +287,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
     void removeProjectMember_success() {
@@ -317,7 +302,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void removeProjectMember_failed_userNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project
@@ -337,7 +321,6 @@ public class ProjectTests {
     }
 
     @Test
-    @Disabled
     @Tag("JAD-3")
     void removeProjectMember_failed_projectNotFound() {
         UserLoginGetDto tokenDetails = TestUtils.loginUser(webTestClient, "alex", "alex"); // The lead of the project
