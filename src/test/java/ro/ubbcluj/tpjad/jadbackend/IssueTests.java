@@ -248,7 +248,7 @@ public class IssueTests {
             .expectHeader().contentType(MediaType.APPLICATION_JSON)
             .expectBody()
             .json(
-                "{\"errorMessage\": \"Entity 'Comment' with id '10' not found.\"}",
+                "{\"errorMessage\": \"Entity 'Issue' with id '10' not found.\"}",
                 JsonCompareMode.LENIENT
             );
     }
