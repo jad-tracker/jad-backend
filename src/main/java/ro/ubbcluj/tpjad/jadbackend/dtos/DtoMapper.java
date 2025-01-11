@@ -1,6 +1,7 @@
 package ro.ubbcluj.tpjad.jadbackend.dtos;
 
 import org.springframework.stereotype.Component;
+import ro.ubbcluj.tpjad.jadbackend.models.Comment;
 import ro.ubbcluj.tpjad.jadbackend.models.Issue;
 import ro.ubbcluj.tpjad.jadbackend.models.Project;
 import ro.ubbcluj.tpjad.jadbackend.models.ProjectMember;
@@ -56,6 +57,21 @@ public class DtoMapper {
     public List<IssueGetDto> convertIssues(List<Issue> issues) {
         return issues.stream()
                 .map(this::convertIssue)
+                .toList();
+    }
+
+    public CommentGetDto convertComment(Comment comment) {
+        return new CommentGetDto(
+            comment.getId(),
+            comment.getContent(),
+            comment.getDate().format(formatter),
+            comment.getUser().getUsername()
+        );
+    }
+
+    public List<CommentGetDto> convertComments(List<Comment> comments) {
+        return comments.stream()
+                .map(this::convertComment)
                 .toList();
     }
 }
