@@ -21,7 +21,7 @@ public class Issue {
     @Column(name = "summary")
     private String summary;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "type")
